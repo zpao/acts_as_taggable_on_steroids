@@ -23,6 +23,10 @@ class Tag < ActiveRecord::Base
   def count
     read_attribute(:count).to_i
   end
+
+  def to_param
+    name
+  end
   
   class << self
     # Calculate the tag counts for all tags.
